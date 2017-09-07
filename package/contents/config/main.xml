@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="servers" type="String">
+      <label>Servers</label>
+      <default>[]</default>
+    </entry>
+  </group>
+  <group name="Appearance">
+    <entry name="fontSize" type="int">
+      <label>Font size</label>
+      <default>12</default>
+    </entry>
+	<entry name="iconOnline" type="String">
+      <label>Online icon</label>
+      <default>security-high</default>
+    </entry>
+	<entry name="iconOffline" type="String">
+      <label>Offline icon</label>
+      <default>security-low</default>
+    </entry>
+  </group>
+</kcfg>

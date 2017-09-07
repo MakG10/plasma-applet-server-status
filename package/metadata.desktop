@@ -1,0 +1,27 @@
+[Desktop Entry]
+Name=Server Status
+Name[en_GB]=Server Status
+Name[pl]=Status Serwerów
+Comment=Shows status of user defined servers.
+Comment[en_GB]=Shows status of user defined servers.
+Comment[pl]=Pokazuje status serwerów zdefiniowanych przez użytkownika.
+
+Icon=applications-internet
+Type=Service
+ServiceTypes=Plasma/Applet
+
+X-KDE-PluginInfo-Author=Maciej Gierej
+X-KDE-PluginInfo-Email=makg@makg.eu
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=http://maciej.gierej.pl
+X-KDE-PluginInfo-Category=Utilities
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=MIT
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Name=org.kde.plasma.serverstatus
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-Requires-FileDialog=Unused
+X-Plasma-Requires-LaunchApp=Unused
+X-Plasma-DefaultSize=200,300
