@@ -23,15 +23,15 @@ Use additional `-g` flag to install plasmoid globally, for all users.
 You can define your custom command which will be executed on each server update. The plasmoid interprets exit code 0 as the server being online. Any other exit code will result in offline status. You can use `%hostname%` string in the command definition to pass particular server's hostname as an argument or option.
 
 ## Screenshots
-![Bitcoin Price Plasmoid](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-plasmoid.png)
+![Server Status Plasmoid](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-plasmoid.png)
 
-![Bitcoin Price Plasmoid (Panel)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-panel.png)
+![Server Status Plasmoid (Panel)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-panel.png)
 
-![Bitcoin Price Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-config.png)
+![Server Status Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-config.png)
 
-![Bitcoin Price Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-item.png)
+![Server Status Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-config-item.png)
 
-![Bitcoin Price Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-appearance.png)
+![Server Status Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-config-appearance.png)
 
 ## Changelog
 
