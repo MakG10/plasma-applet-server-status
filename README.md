@@ -33,6 +33,10 @@ You can define your custom command which will be executed on each server update.
 
 ![Server Status Plasmoid (Configuration)](https://raw.githubusercontent.com/MakG10/plasma-applet-server-status/master/server-status-config-appearance.png)
 
+## License
+
+Released under the GPLv3 license.
+
 ## Changelog
 
 ### 1.0
