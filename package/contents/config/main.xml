@@ -24,4 +24,14 @@
       <default>security-low</default>
     </entry>
   </group>
+  <group name="Notifications">
+    <entry name="notificationUp" type="String">
+      <label>Notification on server online</label>
+      <default>{}</default>
+    </entry>
+    <entry name="notificationDown" type="String">
+      <label>Notification on server offline</label>
+      <default>{}</default>
+    </entry>
+  </group>
 </kcfg>

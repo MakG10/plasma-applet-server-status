@@ -169,20 +169,36 @@ Item {
 		signal exited(string sourceName, string stdout)
 	}
 	
-	function reloadServerModel() {
-		serversModel.clear();
+	PlasmaCore.DataSource {
+		id: notifyExecDS
+		engine: "executable"
+		connectedSources: []
 		
-		var servers = JSON.parse(plasmoid.configuration.servers);
-		
-		for(var i = 0; i < servers.length; i++) {
-			if(servers[i].active) {
-				servers[i].refreshing = false;
-				servers[i].lastRefreshAt = 0;
-				servers[i].status = 0;
-				
-				serversModel.append(servers[i]);
-			}
+		onNewData: {
+				exited(sourceName, data.stdout)
+				disconnectSource(sourceName)
 		}
+		
+		function exec(cmd) {
+				connectSource(cmd)
+		}
+		signal exited(string sourceName, string stdout)
+	}
+	
+	function reloadServerModel() {
+// 		serversModel.clear();
+// 		
+// 		var servers = JSON.parse(plasmoid.configuration.servers);
+// 		
+// 		for(var i = 0; i < servers.length; i++) {
+// 			if(servers[i].active) {
+// 				servers[i].refreshing = false;
+// 				servers[i].lastRefreshAt = 0;
+// 				servers[i].status = 0;
+// 				
+// 				serversModel.append(servers[i]);
+// 			}
+// 		}
 		
 		serversTimer.restart();
 	}
@@ -236,6 +252,10 @@ Item {
 				break;
 		}
 		
+		if(serversModel.get(index).status != status) {
+			notify(index, status);
+		}
+		
 		serversModel.setProperty(index, "status", status);
 		serversModel.setProperty(index, "refreshing", false);
 		serversModel.setProperty(index, "lastRefreshAt", new Date().getTime() / 1000);
@@ -254,6 +274,38 @@ Item {
 		}
 		
 		statusSummary = status;
+	}
+	
+	function notify(serverIndex, status) {
+		var notification = status === 0 ? plasmoid.configuration.notificationDown : plasmoid.configuration.notificationUp;
+		notification = JSON.parse(notification);
+		
+		switch(notification.action) {
+			case 1: // Play sound
+				break;
+				
+			case 2: // System notification
+				var title = serversModel.get(serverIndex).name;
+				var text = status === 0 ?
+					'Server ' + serversModel.get(serverIndex).name + ' is offline.' :
+					'Server ' + serversModel.get(serverIndex).name + ' is online';
+					
+				var command = 'notify-send "' + title.replace(/"/, '\"') + '" "' + text.replace(/"/, '\"') + '"';
+				
+				notifyExecDS.exec(command);
+				break;
+				
+			case 3: // Command
+				var command = notification.extraOptions.command
+					.replace(/\%hostname\%/g, serversModel.get(index).hostname)
+					.replace(/\%name\%/g, serversModel.get(index).name);
+					
+				notifyExecDS.exec(command);
+				break;
+				
+			case 0: // Nothing
+				break;
+		}
 	}
 	
 	function action_refreshAll() {
