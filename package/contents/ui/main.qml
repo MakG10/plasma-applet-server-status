@@ -81,7 +81,7 @@ Item {
 				PlasmaComponents.BusyIndicator {
 					width: parent.height
 					height: parent.height
-					anchors.horizontalCenter: icon.horizontalCenter
+					//anchors.horizontalCenter: icon.horizontalCenter
 					running: model.refreshing
 					visible: model.refreshing
 				}
@@ -99,8 +99,8 @@ Item {
 				PlasmaComponents.Label {
 					id: nameText
 					
-					anchors.left: icon.right
-					anchors.leftMargin: 10
+					//anchors.left: icon.right
+					//anchors.leftMargin: 10
 					
 					height: parent.height
 					text: model.name.length == 0 ? model.hostname : model.name
@@ -111,10 +111,10 @@ Item {
 				MouseArea {
 					id: mouseArea
 					
-					anchors.top: icon.top
-					anchors.right: nameText.right
-					anchors.bottom: icon.bottom
-					anchors.left: icon.left
+					//anchors.top: icon.top
+					//anchors.right: nameText.right
+					//anchors.bottom: icon.bottom
+					//anchors.left: icon.left
 					hoverEnabled: true
 					onClicked: {
 						refreshServer(model.index)
