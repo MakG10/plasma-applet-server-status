@@ -173,6 +173,7 @@ Item {
 				
 				PlasmaComponents.Label {
 					text: "Name:"
+					color: myPalette.textColor 
 				}
 				
 				TextField {
@@ -183,6 +184,7 @@ Item {
 				
 				PlasmaComponents.Label {
 					text: "Host name:"
+					color: myPalette.textColor
 				}
 				
 				TextField {
@@ -193,6 +195,7 @@ Item {
 				
 				PlasmaComponents.Label {
 					text: i18n("Refresh rate:")
+					color: myPalette.textColor
 				}
 				
 				SpinBox {
@@ -205,6 +208,7 @@ Item {
 				
 				PlasmaComponents.Label {
 					text: i18n("Check method:")
+					color: myPalette.textColor
 				}
 				
 				ComboBox {
