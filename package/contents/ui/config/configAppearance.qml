@@ -17,6 +17,7 @@ Item {
 		
 		PlasmaComponents.Label {
 			text: i18n("Font size:")
+			color: myPalette.textColor
 		}
 		
 		SpinBox {
@@ -29,6 +30,7 @@ Item {
 		
 		PlasmaComponents.Label {
 			text: i18n("Online icon:")
+			color: myPalette.textColor
 		}
 		
 		IconPicker {
@@ -41,6 +43,7 @@ Item {
 		
 		PlasmaComponents.Label {
 			text: i18n("Offline icon:")
+			color: myPalette.textColor
 		}
 		
 		IconPicker {

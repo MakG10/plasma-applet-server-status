@@ -22,6 +22,11 @@ Item {
 	
 // 	Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
 	Plasmoid.toolTipTextFormat: Text.RichText
+
+	SystemPalette { 
+		id: myPalette; 
+		colorGroup: SystemPalette.Active 
+	}
 	
 	ServersModel {
 		id: serversModel
